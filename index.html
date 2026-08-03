@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>FlorestaCalc Pro</title>
+
+  <meta
+    name="description"
+    content="Aplicativo para inventário florestal, cubagem, levantamentos GPS, talhões e relatórios profissionais."
+  >
+
+  <style>
+    :root {
+      --verde-escuro: #174d2c;
+      --verde: #2e7d32;
+      --verde-claro: #eaf5ec;
+      --texto: #1f2923;
+      --cinza: #5f6d64;
+      --branco: #ffffff;
+      --fundo: #f6f9f6;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--fundo);
+      color: var(--texto);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--branco);
+      border-bottom: 1px solid #dfe8e1;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav {
+      max-width: 1100px;
+      margin: auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .marca {
+      font-size: 21px;
+      font-weight: bold;
+      color: var(--verde-escuro);
+      text-decoration: none;
+    }
+
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .menu a {
+      color: var(--texto);
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    .menu a:hover {
+      color: var(--verde);
+    }
+
+    .hero {
+      background:
+        linear-gradient(rgba(19, 73, 41, 0.91), rgba(19, 73, 41, 0.91));
+      color: var(--branco);
+      text-align: center;
+      padding: 100px 24px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 7vw, 66px);
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: auto;
+      font-size: 20px;
+      opacity: 0.96;
+    }
+
+    .botoes {
+      margin-top: 32px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .botao {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 9px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    .botao-principal {
+      background: var(--branco);
+      color: var(--verde-escuro);
+    }
+
+    .botao-secundario {
+      border: 1px solid var(--branco);
+      color: var(--branco);
+    }
+
+    .botao:hover {
+      transform: translateY(-2px);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 70px 24px;
+    }
+
+    section {
+      margin-bottom: 80px;
+    }
+
+    h2 {
+      color: var(--verde-escuro);
+      font-size: 32px;
+      margin-bottom: 14px;
+    }
+
+    .introducao {
+      max-width: 800px;
+      color: var(--cinza);
+      font-size: 18px;
+      margin-bottom: 32px;
+    }
+
+    .grade {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--branco);
+      border: 1px solid #dfe8e1;
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 5px 18px rgba(22, 64, 37, 0.06);
+    }
+
+    .card h3 {
+      color: var(--verde-escuro);
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      color: var(--cinza);
+    }
+
+    .icone {
+      font-size: 34px;
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .legal {
+      background: var(--verde-claro);
+      border-radius: 16px;
+      padding: 32px;
+    }
+
+    .links-legais {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .links-legais a {
+      background: var(--branco);
+      color: var(--verde-escuro);
+      border: 1px solid #c9dfce;
+      border-radius: 9px;
+      padding: 12px 18px;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .contato {
+      text-align: center;
+    }
+
+    .email {
+      display: inline-block;
+      margin-top: 18px;
+      color: var(--verde);
+      font-size: 18px;
+      font-weight: bold;
+      text-decoration: none;
+      word-break: break-word;
+    }
+
+    footer {
+      background: var(--verde-escuro);
+      color: var(--branco);
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    footer p {
+      opacity: 0.9;
+    }
+
+    @media (max-width: 700px) {
+      nav {
+        flex-direction: column;
+      }
+
+      .menu {
+        justify-content: center;
+      }
+
+      .hero {
+        padding: 75px 20px;
+      }
+
+      .hero p {
+        font-size: 18px;
+      }
+
+      main {
+        padding-top: 50px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav>
+      <a class="marca" href="#">🌲 FlorestaCalc Pro</a>
+
+      <div class="menu">
+        <a href="#recursos">Recursos</a>
+        <a href="#documentos">Privacidade</a>
+        <a href="#contato">Contato</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>FlorestaCalc Pro</h1>
+
+    <p>
+      Inventário florestal, cubagem, levantamentos GPS, gestão de
+      propriedades e relatórios profissionais em um único aplicativo.
+    </p>
+
+    <div class="botoes">
+      <a class="botao botao-principal" href="#recursos">
+        Conheça os recursos
+      </a>
+
+      <a class="botao botao-secundario" href="#contato">
+        Entrar em contato
+      </a>
+    </div>
+  </section>
+
+  <main>
+
+    <section id="recursos">
+      <h2>Recursos do aplicativo</h2>
+
+      <p class="introducao">
+        O FlorestaCalc Pro foi desenvolvido para facilitar atividades de
+        campo, medições florestais, organização de áreas e geração de
+        documentos técnicos.
+      </p>
+
+      <div class="grade">
+
+        <article class="card">
+          <span class="icone">🗺️</span>
+          <h3>Propriedades e talhões</h3>
+          <p>
+            Cadastre propriedades, delimite áreas no mapa e organize seus
+            talhões com pontos georreferenciados.
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="icone">📍</span>
+          <h3>Levantamentos GPS</h3>
+          <p>
+            Registre trajetos, distâncias, pontos de referência e exporte
+            informações em GPX ou KML.
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="icone">🌲</span>
+          <h3>Inventário florestal</h3>
+          <p>
+            Registre quantidade de árvores, CAP, DAP, altura, fator de forma,
+            volume e estimativas econômicas.
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="icone">📏</span>
+          <h3>Cubagem</h3>
+          <p>
+            Calcule volumes individuais e totais a partir das medições
+            informadas pelo usuário.
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="icone">📄</span>
+          <h3>Relatórios em PDF</h3>
+          <p>
+            Gere relatórios profissionais com dados técnicos, tabelas,
+            coordenadas e imagens de mapas.
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="icone">☁️</span>
+          <h3>Backup e sincronização</h3>
+          <p>
+            Mantenha os registros vinculados à sua conta e sincronize os dados
+            quando houver conexão.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="documentos" class="legal">
+      <h2>Privacidade e documentos legais</h2>
+
+      <p>
+        Consulte como os dados são tratados, as condições de utilização do
+        aplicativo e as instruções para exclusão de conta.
+      </p>
+
+      <div class="links-legais">
+        <a href="politica-de-privacidade.html">
+          Política de Privacidade
+        </a>
+
+        <a href="termos-de-uso.html">
+          Termos de Uso
+        </a>
+
+        <a href="exclusao-de-conta.html">
+          Exclusão de conta e dados
+        </a>
+      </div>
+    </section>
+
+    <section id="contato" class="contato">
+      <h2>Contato e suporte</h2>
+
+      <p>
+        Para suporte técnico, dúvidas sobre privacidade ou solicitações
+        relacionadas à conta, entre em contato por e-mail.
+      </p>
+
+      <a
+        class="email"
+        href="mailto:forestmeasurepro@gmail.com"
+      >
+        forestmeasurepro@gmail.com
+      </a>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>
+      © 2026 FlorestaCalc Pro. Todos os direitos reservados.
+    </p>
+  </footer>
+
+</body>
+</html>
