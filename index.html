@@ -352,6 +352,72 @@
       margin-bottom: 12px;
     }
 
+
+    /* GALERIA WINDOWS */
+
+    .galeria-windows {
+      margin-top: 10px;
+    }
+
+    .galeria-cabecalho {
+      text-align: center;
+      max-width: 820px;
+      margin: 0 auto 34px;
+    }
+
+    .galeria-cabecalho p {
+      color: var(--cinza);
+      font-size: 18px;
+    }
+
+    .galeria-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .galeria-item {
+      background: var(--branco);
+      border: 1px solid #dfe8e1;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(22, 64, 37, 0.07);
+    }
+
+    .galeria-item img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      background: #eef3ef;
+    }
+
+    .galeria-texto {
+      padding: 22px;
+    }
+
+    .galeria-texto h3 {
+      color: var(--verde-escuro);
+      margin-bottom: 8px;
+      font-size: 21px;
+    }
+
+    .galeria-texto p {
+      color: var(--cinza);
+    }
+
+    .galeria-item a {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    @media (max-width: 800px) {
+      .galeria-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* STORE */
 
     .store-chamada {
@@ -480,6 +546,7 @@
       <div class="menu">
         <a href="#windows">Windows</a>
         <a href="#recursos">Recursos</a>
+        <a href="#em-acao">Em ação</a>
         <a href="#documentos">Privacidade</a>
         <a href="#contato">Contato</a>
       </div>
@@ -721,6 +788,126 @@
           <p>
             Mantenha seus registros vinculados à conta e sincronize os dados.
           </p>
+        </article>
+
+      </div>
+
+    </section>
+
+
+
+    <section id="em-acao" class="galeria-windows">
+
+      <div class="galeria-cabecalho">
+        <h2>Conheça o FlorestaCalc Pro em ação</h2>
+        <p>
+          Veja algumas das principais funcionalidades da versão Windows em
+          telas reais do aplicativo.
+        </p>
+      </div>
+
+      <div class="galeria-grid">
+
+        <article class="galeria-item">
+          <a href="windows-mapa-poligono.png" target="_blank" rel="noopener noreferrer">
+            <img
+              src="windows-mapa-poligono.png"
+              alt="Mapa de satélite com polígono e pontos marcados no FlorestaCalc Pro"
+              loading="lazy"
+            >
+          </a>
+          <div class="galeria-texto">
+            <h3>Mapeamento e delimitação de áreas</h3>
+            <p>
+              Marque pontos sobre o mapa de satélite, forme polígonos e
+              visualize a área delimitada diretamente no aplicativo.
+            </p>
+          </div>
+        </article>
+
+        <article class="galeria-item">
+          <a href="windows-propriedade.png" target="_blank" rel="noopener noreferrer">
+            <img
+              src="windows-propriedade.png"
+              alt="Detalhes de uma propriedade cadastrada no FlorestaCalc Pro"
+              loading="lazy"
+            >
+          </a>
+          <div class="galeria-texto">
+            <h3>Gestão de propriedades rurais</h3>
+            <p>
+              Centralize informações cadastrais, localização e documentação
+              relacionada às propriedades.
+            </p>
+          </div>
+        </article>
+
+        <article class="galeria-item">
+          <a href="windows-inventario.png" target="_blank" rel="noopener noreferrer">
+            <img
+              src="windows-inventario.png"
+              alt="Tela de detalhes de inventário florestal no FlorestaCalc Pro"
+              loading="lazy"
+            >
+          </a>
+          <div class="galeria-texto">
+            <h3>Inventário e avaliação florestal</h3>
+            <p>
+              Organize dados do inventário e acompanhe quantidade de árvores,
+              volume total e estimativas econômicas.
+            </p>
+          </div>
+        </article>
+
+        <article class="galeria-item">
+          <a href="windows-configurar-relatorio.png" target="_blank" rel="noopener noreferrer">
+            <img
+              src="windows-configurar-relatorio.png"
+              alt="Configuração personalizada de relatório no FlorestaCalc Pro"
+              loading="lazy"
+            >
+          </a>
+          <div class="galeria-texto">
+            <h3>Relatórios personalizados</h3>
+            <p>
+              Escolha quais informações técnicas, cadastrais e econômicas
+              deseja incluir no relatório.
+            </p>
+          </div>
+        </article>
+
+        <article class="galeria-item">
+          <a href="windows-relatorio-pdf.png" target="_blank" rel="noopener noreferrer">
+            <img
+              src="windows-relatorio-pdf.png"
+              alt="Relatório de inventário florestal em PDF gerado pelo FlorestaCalc Pro"
+              loading="lazy"
+            >
+          </a>
+          <div class="galeria-texto">
+            <h3>Relatórios profissionais em PDF</h3>
+            <p>
+              Gere documentos estruturados com identificação, resultados do
+              inventário e informações técnicas.
+            </p>
+          </div>
+        </article>
+
+        <article class="galeria-item">
+          <a href="windows-georreferenciamento-pdf.png" target="_blank" rel="noopener noreferrer">
+            <img
+              src="windows-georreferenciamento-pdf.png"
+              alt="Georreferenciamento de talhão em relatório PDF do FlorestaCalc Pro"
+              loading="lazy"
+            >
+          </a>
+          <div class="galeria-texto">
+            <h3>Georreferenciamento no relatório</h3>
+            <p>
+              Inclua área, imagem de satélite, delimitação do talhão e
+              coordenadas dos vértices no relatório técnico.
+            </p>
+          </div>
         </article>
 
       </div>
