@@ -10,7 +10,7 @@
 
   <meta
     name="description"
-    content="Aplicativo para inventário florestal, cubagem, levantamentos GPS, talhões e relatórios profissionais."
+    content="FlorestaCalc Pro: aplicativo para inventário florestal, cubagem, levantamentos GPS, talhões, propriedades e relatórios profissionais."
   >
 
   <style>
@@ -84,10 +84,21 @@
 
     .hero {
       background:
-        linear-gradient(rgba(19, 73, 41, 0.91), rgba(19, 73, 41, 0.91));
+        linear-gradient(rgba(19, 73, 41, 0.93), rgba(19, 73, 41, 0.93));
       color: var(--branco);
       text-align: center;
       padding: 100px 24px;
+    }
+
+    .hero .disponivel {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 30px;
+      padding: 7px 16px;
+      margin-bottom: 20px;
+      font-size: 14px;
+      font-weight: bold;
     }
 
     .hero h1 {
@@ -130,6 +141,11 @@
       color: var(--branco);
     }
 
+    .botao-verde {
+      background: var(--verde);
+      color: var(--branco);
+    }
+
     .botao:hover {
       transform: translateY(-2px);
     }
@@ -142,6 +158,7 @@
 
     section {
       margin-bottom: 80px;
+      scroll-margin-top: 100px;
     }
 
     h2 {
@@ -156,6 +173,96 @@
       font-size: 18px;
       margin-bottom: 32px;
     }
+
+    /* VERSÃO WINDOWS */
+
+    .windows {
+      background: var(--branco);
+      border: 1px solid #dfe8e1;
+      border-radius: 18px;
+      padding: 42px;
+      box-shadow: 0 8px 28px rgba(22, 64, 37, 0.08);
+    }
+
+    .windows-conteudo {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 45px;
+    }
+
+    .windows-selo {
+      display: inline-block;
+      background: var(--verde-claro);
+      color: var(--verde-escuro);
+      border-radius: 30px;
+      padding: 7px 14px;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 14px;
+    }
+
+    .windows h2 {
+      margin-bottom: 16px;
+    }
+
+    .windows p {
+      color: var(--cinza);
+      font-size: 17px;
+      margin-bottom: 16px;
+    }
+
+    .windows-lista {
+      list-style: none;
+      margin: 22px 0 26px;
+    }
+
+    .windows-lista li {
+      margin-bottom: 10px;
+      color: var(--texto);
+    }
+
+    .windows-lista li::before {
+      content: "✓";
+      color: var(--verde);
+      font-weight: bold;
+      margin-right: 9px;
+    }
+
+    .windows-visual {
+      background: var(--verde-claro);
+      border-radius: 16px;
+      min-height: 330px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 30px;
+      color: var(--verde-escuro);
+    }
+
+    .windows-visual-conteudo {
+      max-width: 320px;
+    }
+
+    .windows-icone {
+      font-size: 75px;
+      line-height: 1;
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .windows-visual h3 {
+      font-size: 25px;
+      margin-bottom: 8px;
+    }
+
+    .windows-visual p {
+      margin-bottom: 0;
+      font-size: 15px;
+    }
+
+    /* RECURSOS */
 
     .grade {
       display: grid;
@@ -186,6 +293,34 @@
       margin-bottom: 12px;
     }
 
+    /* CHAMADA MICROSOFT STORE */
+
+    .store-chamada {
+      background: var(--verde-escuro);
+      color: var(--branco);
+      border-radius: 18px;
+      padding: 45px 32px;
+      text-align: center;
+    }
+
+    .store-chamada h2 {
+      color: var(--branco);
+      margin-bottom: 12px;
+    }
+
+    .store-chamada p {
+      max-width: 680px;
+      margin: 0 auto;
+      font-size: 18px;
+      opacity: 0.94;
+    }
+
+    .store-chamada .botao {
+      margin-top: 25px;
+    }
+
+    /* DOCUMENTOS */
+
     .legal {
       background: var(--verde-claro);
       border-radius: 16px;
@@ -208,6 +343,8 @@
       font-weight: bold;
       text-decoration: none;
     }
+
+    /* CONTATO */
 
     .contato {
       text-align: center;
@@ -232,6 +369,20 @@
 
     footer p {
       opacity: 0.9;
+    }
+
+    @media (max-width: 800px) {
+      .windows-conteudo {
+        grid-template-columns: 1fr;
+      }
+
+      .windows {
+        padding: 28px 22px;
+      }
+
+      .windows-visual {
+        min-height: 260px;
+      }
     }
 
     @media (max-width: 700px) {
@@ -262,38 +413,133 @@
 
   <header>
     <nav>
-      <a class="marca" href="#">🌲 FlorestaCalc Pro</a>
+
+      <a class="marca" href="#">
+        🌲 FlorestaCalc Pro
+      </a>
 
       <div class="menu">
+        <a href="#windows">Windows</a>
         <a href="#recursos">Recursos</a>
         <a href="#documentos">Privacidade</a>
         <a href="#contato">Contato</a>
       </div>
+
     </nav>
   </header>
 
+
   <section class="hero">
+
+    <span class="disponivel">
+      💻 Já disponível para Windows
+    </span>
+
     <h1>FlorestaCalc Pro</h1>
 
     <p>
       Inventário florestal, cubagem, levantamentos GPS, gestão de
-      propriedades e relatórios profissionais em um único aplicativo.
+      propriedades, talhões e relatórios profissionais em um único aplicativo.
     </p>
 
     <div class="botoes">
-      <a class="botao botao-principal" href="#recursos">
+
+      <a
+        class="botao botao-principal"
+        href="https://apps.microsoft.com/detail/9PD38QPGW4B2"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        ⊞ Baixar na Microsoft Store
+      </a>
+
+      <a
+        class="botao botao-secundario"
+        href="#recursos"
+      >
         Conheça os recursos
       </a>
 
-      <a class="botao botao-secundario" href="#contato">
-        Entrar em contato
-      </a>
     </div>
+
   </section>
+
 
   <main>
 
+    <!-- WINDOWS -->
+
+    <section id="windows" class="windows">
+
+      <div class="windows-conteudo">
+
+        <div>
+
+          <span class="windows-selo">
+            WINDOWS
+          </span>
+
+          <h2>FlorestaCalc Pro para Windows</h2>
+
+          <p>
+            Leve suas informações florestais para o computador e tenha
+            ferramentas especializadas para organizar propriedades, talhões,
+            levantamentos, inventários e cubagens.
+          </p>
+
+          <p>
+            O FlorestaCalc Pro foi desenvolvido para reunir diferentes etapas
+            do trabalho florestal em um único ambiente.
+          </p>
+
+          <ul class="windows-lista">
+            <li>Gestão de propriedades e talhões</li>
+            <li>Visualização e delimitação de áreas no mapa</li>
+            <li>Inventário florestal</li>
+            <li>Levantamentos</li>
+            <li>Cubagem</li>
+            <li>Relatórios profissionais</li>
+          </ul>
+
+          <a
+            class="botao botao-verde"
+            href="https://apps.microsoft.com/detail/9PD38QPGW4B2"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            ⊞ Ver na Microsoft Store
+          </a>
+
+        </div>
+
+
+        <div class="windows-visual">
+
+          <div class="windows-visual-conteudo">
+
+            <span class="windows-icone">
+              💻
+            </span>
+
+            <h3>Versão Windows disponível</h3>
+
+            <p>
+              Instale o FlorestaCalc Pro diretamente pela Microsoft Store.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- RECURSOS -->
+
     <section id="recursos">
+
       <h2>Recursos do aplicativo</h2>
 
       <p class="introducao">
@@ -302,66 +548,124 @@
         documentos técnicos.
       </p>
 
+
       <div class="grade">
 
         <article class="card">
+
           <span class="icone">🗺️</span>
+
           <h3>Propriedades e talhões</h3>
+
           <p>
             Cadastre propriedades, delimite áreas no mapa e organize seus
             talhões com pontos georreferenciados.
           </p>
+
         </article>
 
+
         <article class="card">
+
           <span class="icone">📍</span>
-          <h3>Levantamentos GPS</h3>
+
+          <h3>Levantamentos</h3>
+
           <p>
-            Registre trajetos, distâncias, pontos de referência e exporte
-            informações em GPX ou KML.
+            Organize levantamentos, trajetos, pontos de referência e
+            informações relacionadas às áreas cadastradas.
           </p>
+
         </article>
 
+
         <article class="card">
+
           <span class="icone">🌲</span>
+
           <h3>Inventário florestal</h3>
+
           <p>
             Registre quantidade de árvores, CAP, DAP, altura, fator de forma,
             volume e estimativas econômicas.
           </p>
+
         </article>
 
+
         <article class="card">
+
           <span class="icone">📏</span>
+
           <h3>Cubagem</h3>
+
           <p>
             Calcule volumes individuais e totais a partir das medições
             informadas pelo usuário.
           </p>
+
         </article>
 
+
         <article class="card">
+
           <span class="icone">📄</span>
-          <h3>Relatórios em PDF</h3>
+
+          <h3>Relatórios profissionais</h3>
+
           <p>
-            Gere relatórios profissionais com dados técnicos, tabelas,
-            coordenadas e imagens de mapas.
+            Organize os resultados dos seus trabalhos e gere documentos
+            profissionais com as informações cadastradas.
           </p>
+
         </article>
 
+
         <article class="card">
+
           <span class="icone">☁️</span>
+
           <h3>Backup e sincronização</h3>
+
           <p>
             Mantenha os registros vinculados à sua conta e sincronize os dados
             quando houver conexão.
           </p>
+
         </article>
 
       </div>
+
     </section>
 
+
+    <!-- MICROSOFT STORE -->
+
+    <section class="store-chamada">
+
+      <h2>Comece a usar o FlorestaCalc Pro</h2>
+
+      <p>
+        A versão para Windows já está disponível. Acesse a página oficial
+        do FlorestaCalc Pro na Microsoft Store.
+      </p>
+
+      <a
+        class="botao botao-principal"
+        href="https://apps.microsoft.com/detail/9PD38QPGW4B2"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        ⊞ Baixar na Microsoft Store
+      </a>
+
+    </section>
+
+
+    <!-- DOCUMENTOS LEGAIS -->
+
     <section id="documentos" class="legal">
+
       <h2>Privacidade e documentos legais</h2>
 
       <p>
@@ -369,7 +673,9 @@
         aplicativo e as instruções para exclusão de conta.
       </p>
 
+
       <div class="links-legais">
+
         <a href="politica-de-privacidade.html">
           Política de Privacidade
         </a>
@@ -381,10 +687,16 @@
         <a href="exclusao-de-conta.html">
           Exclusão de conta e dados
         </a>
+
       </div>
+
     </section>
 
+
+    <!-- CONTATO -->
+
     <section id="contato" class="contato">
+
       <h2>Contato e suporte</h2>
 
       <p>
@@ -398,14 +710,18 @@
       >
         forestmeasurepro@gmail.com
       </a>
+
     </section>
 
   </main>
 
+
   <footer>
+
     <p>
       © 2026 FlorestaCalc Pro. Todos os direitos reservados.
     </p>
+
   </footer>
 
 </body>
