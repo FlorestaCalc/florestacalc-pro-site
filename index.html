@@ -10,7 +10,7 @@
 
   <meta
     name="description"
-    content="FlorestaCalc Pro: aplicativo para inventário florestal, cubagem, levantamentos GPS, talhões, propriedades e relatórios profissionais."
+    content="FlorestaCalc Pro: inventário florestal, cubagem, levantamentos, gestão de propriedades, talhões e relatórios profissionais."
   >
 
   <style>
@@ -46,11 +46,11 @@
       border-bottom: 1px solid #dfe8e1;
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 100;
     }
 
     nav {
-      max-width: 1100px;
+      max-width: 1200px;
       margin: auto;
       padding: 16px 24px;
       display: flex;
@@ -60,7 +60,7 @@
     }
 
     .marca {
-      font-size: 21px;
+      font-size: 22px;
       font-weight: bold;
       color: var(--verde-escuro);
       text-decoration: none;
@@ -69,7 +69,7 @@
     .menu {
       display: flex;
       flex-wrap: wrap;
-      gap: 18px;
+      gap: 22px;
     }
 
     .menu a {
@@ -82,53 +82,82 @@
       color: var(--verde);
     }
 
+    /* HERO */
+
     .hero {
       background:
-        linear-gradient(rgba(19, 73, 41, 0.93), rgba(19, 73, 41, 0.93));
+        linear-gradient(rgba(20, 78, 45, 0.95), rgba(20, 78, 45, 0.95));
       color: var(--branco);
-      text-align: center;
-      padding: 100px 24px;
+      padding: 55px 24px;
     }
 
-    .hero .disponivel {
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.35);
-      border-radius: 30px;
-      padding: 7px 16px;
-      margin-bottom: 20px;
-      font-size: 14px;
+    .hero-conteudo {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 55px;
+    }
+
+    .hero-texto {
+      max-width: 620px;
+    }
+
+    .windows-topo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 22px;
       font-weight: bold;
     }
 
+    .windows-logo {
+      width: 30px;
+      height: 30px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
+    }
+
+    .windows-logo span {
+      background: var(--branco);
+      display: block;
+    }
+
     .hero h1 {
-      font-size: clamp(38px, 7vw, 66px);
-      line-height: 1.1;
-      margin-bottom: 20px;
+      font-size: clamp(42px, 6vw, 68px);
+      line-height: 1.05;
+      margin-bottom: 22px;
     }
 
     .hero p {
-      max-width: 760px;
-      margin: auto;
-      font-size: 20px;
+      font-size: 19px;
+      max-width: 650px;
       opacity: 0.96;
     }
 
     .botoes {
-      margin-top: 32px;
+      margin-top: 30px;
       display: flex;
-      justify-content: center;
       flex-wrap: wrap;
       gap: 14px;
     }
 
     .botao {
-      display: inline-block;
-      padding: 13px 22px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 22px;
       border-radius: 9px;
       font-weight: bold;
       text-decoration: none;
       transition: 0.2s;
+    }
+
+    .botao:hover {
+      transform: translateY(-2px);
     }
 
     .botao-principal {
@@ -146,18 +175,58 @@
       color: var(--branco);
     }
 
-    .botao:hover {
-      transform: translateY(-2px);
+    .windows-logo-botao {
+      width: 19px;
+      height: 19px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      flex-shrink: 0;
     }
 
-    main {
-      max-width: 1100px;
+    .windows-logo-botao span {
+      background: currentColor;
+      display: block;
+    }
+
+    /* IMAGEM REAL */
+
+    .hero-imagem {
+      position: relative;
+    }
+
+    .monitor {
+      background: #111;
+      padding: 12px 12px 20px;
+      border-radius: 14px;
+      box-shadow: 0 24px 55px rgba(0, 0, 0, 0.32);
+    }
+
+    .monitor img {
+      width: 100%;
+      display: block;
+      border-radius: 7px;
+    }
+
+    .monitor-base {
+      width: 88%;
+      height: 13px;
       margin: auto;
-      padding: 70px 24px;
+      background: linear-gradient(to bottom, #bfc3c0, #747875);
+      border-radius: 0 0 50% 50%;
+      box-shadow: 0 8px 12px rgba(0,0,0,0.25);
+    }
+
+    /* MAIN */
+
+    main {
+      max-width: 1200px;
+      margin: auto;
+      padding: 55px 24px 70px;
     }
 
     section {
-      margin-bottom: 80px;
+      margin-bottom: 70px;
       scroll-margin-top: 100px;
     }
 
@@ -168,58 +237,62 @@
     }
 
     .introducao {
-      max-width: 800px;
+      max-width: 850px;
       color: var(--cinza);
       font-size: 18px;
       margin-bottom: 32px;
     }
 
-    /* VERSÃO WINDOWS */
+    /* WINDOWS */
 
     .windows {
       background: var(--branco);
       border: 1px solid #dfe8e1;
       border-radius: 18px;
-      padding: 42px;
-      box-shadow: 0 8px 28px rgba(22, 64, 37, 0.08);
+      padding: 36px;
+      box-shadow: 0 8px 28px rgba(22, 64, 37, 0.07);
     }
 
-    .windows-conteudo {
+    .windows-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.2fr 1fr 0.8fr;
+      gap: 35px;
       align-items: center;
-      gap: 45px;
     }
 
     .windows-selo {
-      display: inline-block;
-      background: var(--verde-claro);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
       color: var(--verde-escuro);
-      border-radius: 30px;
-      padding: 7px 14px;
-      font-size: 14px;
       font-weight: bold;
-      margin-bottom: 14px;
+      margin-bottom: 17px;
     }
 
-    .windows h2 {
-      margin-bottom: 16px;
+    .windows-logo-verde {
+      width: 24px;
+      height: 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+    }
+
+    .windows-logo-verde span {
+      display: block;
+      background: var(--verde-escuro);
     }
 
     .windows p {
       color: var(--cinza);
-      font-size: 17px;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     .windows-lista {
       list-style: none;
-      margin: 22px 0 26px;
     }
 
     .windows-lista li {
-      margin-bottom: 10px;
-      color: var(--texto);
+      margin-bottom: 11px;
     }
 
     .windows-lista li::before {
@@ -229,37 +302,23 @@
       margin-right: 9px;
     }
 
-    .windows-visual {
+    .windows-card {
       background: var(--verde-claro);
-      border-radius: 16px;
-      min-height: 330px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      border-radius: 15px;
+      padding: 28px 20px;
       text-align: center;
-      padding: 30px;
-      color: var(--verde-escuro);
     }
 
-    .windows-visual-conteudo {
-      max-width: 320px;
-    }
-
-    .windows-icone {
-      font-size: 75px;
-      line-height: 1;
+    .windows-card .pc {
+      font-size: 60px;
       display: block;
-      margin-bottom: 20px;
+      margin-bottom: 12px;
     }
 
-    .windows-visual h3 {
-      font-size: 25px;
+    .windows-card h3 {
+      color: var(--verde-escuro);
+      font-size: 23px;
       margin-bottom: 8px;
-    }
-
-    .windows-visual p {
-      margin-bottom: 0;
-      font-size: 15px;
     }
 
     /* RECURSOS */
@@ -293,7 +352,7 @@
       margin-bottom: 12px;
     }
 
-    /* CHAMADA MICROSOFT STORE */
+    /* STORE */
 
     .store-chamada {
       background: var(--verde-escuro);
@@ -305,21 +364,20 @@
 
     .store-chamada h2 {
       color: var(--branco);
-      margin-bottom: 12px;
     }
 
     .store-chamada p {
-      max-width: 680px;
+      max-width: 720px;
       margin: 0 auto;
       font-size: 18px;
       opacity: 0.94;
     }
 
     .store-chamada .botao {
-      margin-top: 25px;
+      margin-top: 24px;
     }
 
-    /* DOCUMENTOS */
+    /* LEGAL */
 
     .legal {
       background: var(--verde-claro);
@@ -344,8 +402,6 @@
       text-decoration: none;
     }
 
-    /* CONTATO */
-
     .contato {
       text-align: center;
     }
@@ -357,7 +413,6 @@
       font-size: 18px;
       font-weight: bold;
       text-decoration: none;
-      word-break: break-word;
     }
 
     footer {
@@ -367,21 +422,17 @@
       padding: 30px 20px;
     }
 
-    footer p {
-      opacity: 0.9;
-    }
-
-    @media (max-width: 800px) {
-      .windows-conteudo {
+    @media (max-width: 900px) {
+      .hero-conteudo {
         grid-template-columns: 1fr;
       }
 
-      .windows {
-        padding: 28px 22px;
+      .hero-texto {
+        max-width: none;
       }
 
-      .windows-visual {
-        min-height: 260px;
+      .windows-grid {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -395,15 +446,23 @@
       }
 
       .hero {
-        padding: 75px 20px;
+        padding: 50px 20px;
+      }
+
+      .hero h1 {
+        font-size: 44px;
       }
 
       .hero p {
-        font-size: 18px;
+        font-size: 17px;
       }
 
       main {
-        padding-top: 50px;
+        padding: 45px 18px;
+      }
+
+      .windows {
+        padding: 25px 20px;
       }
     }
   </style>
@@ -431,34 +490,77 @@
 
   <section class="hero">
 
-    <span class="disponivel">
-      💻 Já disponível para Windows
-    </span>
+    <div class="hero-conteudo">
 
-    <h1>FlorestaCalc Pro</h1>
+      <div class="hero-texto">
 
-    <p>
-      Inventário florestal, cubagem, levantamentos GPS, gestão de
-      propriedades, talhões e relatórios profissionais em um único aplicativo.
-    </p>
+        <div class="windows-topo">
 
-    <div class="botoes">
+          <span class="windows-logo">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
 
-      <a
-        class="botao botao-principal"
-        href="https://apps.microsoft.com/detail/9PD38QPGW4B2"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        ⊞ Baixar na Microsoft Store
-      </a>
+          <span>Já disponível para Windows</span>
 
-      <a
-        class="botao botao-secundario"
-        href="#recursos"
-      >
-        Conheça os recursos
-      </a>
+        </div>
+
+        <h1>FlorestaCalc Pro</h1>
+
+        <p>
+          Inventário florestal, cubagem, levantamentos GPS, gestão de
+          propriedades, talhões e relatórios profissionais em um único
+          aplicativo.
+        </p>
+
+        <div class="botoes">
+
+          <a
+            class="botao botao-principal"
+            href="https://apps.microsoft.com/detail/9PD38QPGW4B2"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+
+            <span class="windows-logo-botao">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+
+            Baixar na Microsoft Store
+
+          </a>
+
+          <a
+            class="botao botao-secundario"
+            href="#recursos"
+          >
+            Conheça os recursos
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="hero-imagem">
+
+        <div class="monitor">
+
+          <img
+            src="florestacalc-windows-mapa.png"
+            alt="FlorestaCalc Pro para Windows exibindo mapa e delimitação de área"
+          >
+
+        </div>
+
+        <div class="monitor-base"></div>
+
+      </div>
 
     </div>
 
@@ -467,30 +569,60 @@
 
   <main>
 
-    <!-- WINDOWS -->
-
     <section id="windows" class="windows">
 
-      <div class="windows-conteudo">
+      <div class="windows-grid">
 
         <div>
 
-          <span class="windows-selo">
+          <div class="windows-selo">
+
+            <span class="windows-logo-verde">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+
             WINDOWS
-          </span>
+
+          </div>
 
           <h2>FlorestaCalc Pro para Windows</h2>
 
           <p>
             Leve suas informações florestais para o computador e tenha
-            ferramentas especializadas para organizar propriedades, talhões,
-            levantamentos, inventários e cubagens.
+            ferramentas especializadas para organizar propriedades,
+            talhões, levantamentos, inventários e cubagens.
           </p>
 
           <p>
-            O FlorestaCalc Pro foi desenvolvido para reunir diferentes etapas
-            do trabalho florestal em um único ambiente.
+            O FlorestaCalc Pro reúne diferentes etapas do trabalho
+            florestal em um único ambiente.
           </p>
+
+          <a
+            class="botao botao-verde"
+            href="https://apps.microsoft.com/detail/9PD38QPGW4B2"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+
+            <span class="windows-logo-botao">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+
+            Ver na Microsoft Store
+
+          </a>
+
+        </div>
+
+
+        <div>
 
           <ul class="windows-lista">
             <li>Gestão de propriedades e talhões</li>
@@ -501,33 +633,18 @@
             <li>Relatórios profissionais</li>
           </ul>
 
-          <a
-            class="botao botao-verde"
-            href="https://apps.microsoft.com/detail/9PD38QPGW4B2"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            ⊞ Ver na Microsoft Store
-          </a>
-
         </div>
 
 
-        <div class="windows-visual">
+        <div class="windows-card">
 
-          <div class="windows-visual-conteudo">
+          <span class="pc">💻</span>
 
-            <span class="windows-icone">
-              💻
-            </span>
+          <h3>Versão Windows disponível</h3>
 
-            <h3>Versão Windows disponível</h3>
-
-            <p>
-              Instale o FlorestaCalc Pro diretamente pela Microsoft Store.
-            </p>
-
-          </div>
+          <p>
+            Instale o FlorestaCalc Pro diretamente pela Microsoft Store.
+          </p>
 
         </div>
 
@@ -535,8 +652,6 @@
 
     </section>
 
-
-    <!-- RECURSOS -->
 
     <section id="recursos">
 
@@ -552,94 +667,66 @@
       <div class="grade">
 
         <article class="card">
-
           <span class="icone">🗺️</span>
-
           <h3>Propriedades e talhões</h3>
-
           <p>
             Cadastre propriedades, delimite áreas no mapa e organize seus
-            talhões com pontos georreferenciados.
+            talhões.
           </p>
-
         </article>
 
 
         <article class="card">
-
           <span class="icone">📍</span>
-
           <h3>Levantamentos</h3>
-
           <p>
-            Organize levantamentos, trajetos, pontos de referência e
-            informações relacionadas às áreas cadastradas.
+            Organize levantamentos, trajetos e pontos de referência das áreas.
           </p>
-
         </article>
 
 
         <article class="card">
-
           <span class="icone">🌲</span>
-
           <h3>Inventário florestal</h3>
-
           <p>
-            Registre quantidade de árvores, CAP, DAP, altura, fator de forma,
-            volume e estimativas econômicas.
+            Registre CAP, DAP, altura, quantidade, volume e outras informações
+            do inventário.
           </p>
-
         </article>
 
 
         <article class="card">
-
           <span class="icone">📏</span>
-
           <h3>Cubagem</h3>
-
           <p>
             Calcule volumes individuais e totais a partir das medições
-            informadas pelo usuário.
+            informadas.
           </p>
-
         </article>
 
 
         <article class="card">
-
           <span class="icone">📄</span>
-
           <h3>Relatórios profissionais</h3>
-
           <p>
-            Organize os resultados dos seus trabalhos e gere documentos
-            profissionais com as informações cadastradas.
+            Gere documentos técnicos e organize os resultados dos seus
+            trabalhos.
           </p>
-
         </article>
 
 
         <article class="card">
-
           <span class="icone">☁️</span>
-
           <h3>Backup e sincronização</h3>
-
           <p>
-            Mantenha os registros vinculados à sua conta e sincronize os dados
-            quando houver conexão.
+            Mantenha seus registros vinculados à conta e sincronize os dados.
           </p>
-
         </article>
 
       </div>
 
     </section>
 
-
-    <!-- MICROSOFT STORE -->
 
     <section class="store-chamada">
 
@@ -656,23 +743,29 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        ⊞ Baixar na Microsoft Store
+
+        <span class="windows-logo-botao">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+
+        Baixar na Microsoft Store
+
       </a>
 
     </section>
 
-
-    <!-- DOCUMENTOS LEGAIS -->
 
     <section id="documentos" class="legal">
 
       <h2>Privacidade e documentos legais</h2>
 
       <p>
-        Consulte como os dados são tratados, as condições de utilização do
-        aplicativo e as instruções para exclusão de conta.
+        Consulte como os dados são tratados, as condições de utilização
+        do aplicativo e as instruções para exclusão de conta.
       </p>
-
 
       <div class="links-legais">
 
@@ -692,8 +785,6 @@
 
     </section>
 
-
-    <!-- CONTATO -->
 
     <section id="contato" class="contato">
 
